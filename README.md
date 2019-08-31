@@ -18,3 +18,11 @@ Do you want to listen to it in your favorite podcast-app?
 - Start downloading & listening!
 
 (And yes, you've basically just created a podcast-feed by hand; But I'm working on it...)
+
+## About
+This thing is just an idea and very 'work-in-progress'.
+It was created to scratch my own itch; Maybe it also works for you.
+
+Suggestions and ideas are always welcome.  
+[Create an issue](https://github.com/elwinschmitz/bookcasts/issues/new)
+ or take a look at all the '_[things I already thought of but didn't get to yet](https://github.com/elwinschmitz/bookcasts/projects)_'.

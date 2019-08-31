@@ -66,12 +66,18 @@ echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
 		<title><?=$channel['title']?></title>
 		<pubDate><?=$channel['pubDate']?></pubDate>
 		<link><?=$channel['link']?></link>
+<?php if (!empty($channel['language'])): ?>
 		<language><?=$channel['language']?></language>
+<?php endif; ?>
+<?php if (!empty($channel['copyright'])): ?>
 		<copyright><![CDATA[<?=$channel['copyright']?>]]></copyright>
-		<image>
-			<url><?=$channel['image']['url']?></url>
-		</image>
+<?php endif; ?>
+<?php if (!empty($channel['image'])): ?>
+		<image><url><?=$channel['image']['url']?></url></image>
+<?php endif; ?>
+<?php if (!empty($channel['description'])): ?>
 		<description><![CDATA[<?=$channel['description']?>]]></description>
+<?php endif; ?>
 
 		<?php foreach ($channel['items'] as $index => $item): ?>
 			<item>

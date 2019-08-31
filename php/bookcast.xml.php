@@ -91,23 +91,23 @@ echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
 		<description><![CDATA[<?=$channel['description']?>]]></description>
 <?php endif; ?>
 
-		<?php foreach ($channel['items'] as $index => $item): ?>
+<?php foreach ($channel['items'] as $index => $item): ?>
 			<item>
 				<title><?=$item['title']?></title>
 				<pubDate><?=$item['pubDate']?></pubDate>
 				<guid isPermaLink="false"><![CDATA[<?=$channel['link'] . "?" . $index?>]]></guid>
-				<?php if (!empty($item['link'])): ?>
+<?php if (!empty($item['link'])): ?>
 					<link><![CDATA[<?=$item['link']?>]]></link>
-				<?php endif; ?>
-				<?php if (!empty($item['description'])): ?>
+<?php endif; ?>
+<?php if (!empty($item['description'])): ?>
 					<description><![CDATA[<?=$item['description']?>]]></description>
-				<?php endif; ?>
+<?php endif; ?>
 				<enclosure length="<?=$item['length']?>" 
-									 type="<?=$item['type']?>" 
-									 url="<?=$item['url']?>"
+				           type="<?=$item['type']?>" 
+				           url="<?=$item['url']?>"
 				/>
 			</item>
-		<?php endforeach; ?>
+<?php endforeach; ?>
 
 	</channel>
 </rss>

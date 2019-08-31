@@ -46,7 +46,7 @@ function getBaseUrl() {
 	($_SERVER['HTTPS'] === 'on') ? 'https' : 'http' .
 	'://' .
 	$_SERVER['SERVER_NAME'] .
-	dirname($_SERVER['REQUEST_URI']);
+	dirname($_SERVER['REQUEST_URI']) . '/';
 }
 
 function getCoverArt() {
@@ -57,7 +57,7 @@ function getCoverArt() {
 	}
 
 	return [
-		"url" => getBaseUrl() . '/' . COVER_ART_FILE_NAME
+		"url" => getBaseUrl() . COVER_ART_FILE_NAME
 	];
 }
 

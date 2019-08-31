@@ -8,7 +8,7 @@
 //
 $channel = [
 	"title" => getFolderTitle(),
-	"pubDate" => "Mon, 01 Jan 0000 00:00:00 +0000",
+	"pubDate" => getPubDate(),
 	"link" => "https://example.com/this-bookcast/",
 	"language" => "en",
 	"copyright" => "",
@@ -33,6 +33,12 @@ $channel = [
 
 function getFolderTitle() {
 	return basename(__DIR__);
+}
+
+function getPubDate($file = null) {
+	$fromFile = $file ? $file : __DIR__;
+
+	return date(DATE_RSS, filemtime($fromFile));
 }
 //
 // Output Feed:

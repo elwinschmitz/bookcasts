@@ -9,7 +9,7 @@
 $channel = [
 	"title" => getFolderTitle(),
 	"pubDate" => getPubDate(),
-	"link" => "https://example.com/this-bookcast/",
+	"link" => getBaseUrl(),
 	"language" => "en",
 	"copyright" => "",
 	"image" => [
@@ -40,6 +40,15 @@ function getPubDate($file = null) {
 
 	return date(DATE_RSS, filemtime($fromFile));
 }
+
+function getBaseUrl() {
+	return 
+	($_SERVER['HTTPS'] === 'on') ? 'https' : 'http' .
+	'://' .
+	$_SERVER['SERVER_NAME'] .
+	dirname($_SERVER['REQUEST_URI']);
+}
+
 //
 // Output Feed:
 //

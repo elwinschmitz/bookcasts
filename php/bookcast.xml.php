@@ -7,7 +7,7 @@
 // Configure / Setup data: 
 //
 $channel = [
-	"title" => "Channel Title",
+	"title" => getFolderTitle(),
 	"pubDate" => "Mon, 01 Jan 0000 00:00:00 +0000",
 	"link" => "https://example.com/this-bookcast/",
 	"language" => "en",
@@ -30,6 +30,10 @@ $channel = [
 	],
 ];
 
+
+function getFolderTitle() {
+	return basename(__DIR__);
+}
 //
 // Output Feed:
 //

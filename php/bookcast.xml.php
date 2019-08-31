@@ -53,14 +53,14 @@ function getBaseUrl() {
 // Output Feed:
 //
 header('Content-Type: text/xml');
-echo '<?xml version="1.0" encoding="UTF-8"?>';
+echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
 ?>
-<rss version="2.0" 
+<rss version="2.0"
      xmlns:atom="http://www.w3.org/2005/Atom"
      xmlns:cc="http://web.resource.org/cc/"
-		 xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
-		 xmlns:media="http://search.yahoo.com/mrss/"
-		 xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+     xmlns:media="http://search.yahoo.com/mrss/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 >
 	<channel>
 		<title><?=$channel['title']?></title>

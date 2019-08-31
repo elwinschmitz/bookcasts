@@ -63,7 +63,7 @@ function getItems() {
 			"description" => "",
 			"length" => "1",
 			"type" => AUDIO_FILE_MIMETYPE,
-			"url" => getBaseUrl() . rawurlencode($file),
+			"url" => getBaseUrl() . $file,
 		];
 	}
 

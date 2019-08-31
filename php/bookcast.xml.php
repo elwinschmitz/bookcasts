@@ -6,15 +6,15 @@
 // 
 // Configure / Setup data: 
 //
+define('COVER_ART_FILE_NAME', 'coverart.jpg');
+
 $channel = [
 	"title" => getFolderTitle(),
 	"pubDate" => getPubDate(),
 	"link" => getBaseUrl(),
 	"language" => "en",
 	"copyright" => "",
-	"image" => [
-		"url" => "https://example.com/this-bookcast/coverart.jpg",
-	],
+	"image" => getCoverArt(),
 	"description" => "Channel description",
 	"items" => [
 		[
@@ -47,6 +47,18 @@ function getBaseUrl() {
 	'://' .
 	$_SERVER['SERVER_NAME'] .
 	dirname($_SERVER['REQUEST_URI']);
+}
+
+function getCoverArt() {
+	$hasCoverart = is_file(COVER_ART_FILE_NAME);
+	
+	if (!$hasCoverart) {
+		return false;
+	}
+
+	return [
+		"url" => getBaseUrl() . '/' . COVER_ART_FILE_NAME
+	];
 }
 
 //

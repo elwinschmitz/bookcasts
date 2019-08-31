@@ -7,6 +7,8 @@
 // Configure / Setup data: 
 //
 define('COVER_ART_FILE_NAME', 'coverart.jpg');
+define('AUDIO_FILE_TYPE', '.mp3');
+define('AUDIO_FILE_MIMETYPE', 'audio/mpeg');
 
 $channel = [
 	"title" => getFolderTitle(),
@@ -16,18 +18,7 @@ $channel = [
 	"copyright" => "",
 	"image" => getCoverArt(),
 	"description" => "Channel description",
-	"items" => [
-		[
-			"title" => "Item title",
-			"pubDate" => "Mon, 01 Jan 0000 00:00:01 +0000",
-			"link" => "",
-			"description" => "",
-			"length" => "1",
-			"type" => "audio/mpeg",
-			"url" => "https://example.com/this-bookcast/chapter-1.mp3",
-		],
-		// Repeat 👆 for every file(chapter, episode, etc...)
-	],
+	"items" => getItems(),
 ];
 
 
@@ -59,6 +50,41 @@ function getCoverArt() {
 	return [
 		"url" => getBaseUrl() . COVER_ART_FILE_NAME
 	];
+}
+
+function getItems() {
+	$files = getAudioFiles();
+
+	foreach ($files as $file) {
+		$items[] = [
+			"title" => getReadableTitle($file),
+			"pubDate" => getPubDate($file),
+			"link" => "",
+			"description" => "",
+			"length" => "1",
+			"type" => AUDIO_FILE_MIMETYPE,
+			"url" => getBaseUrl() . rawurlencode($file),
+		];
+	}
+
+	return $items;
+}
+
+function getAudioFiles() {
+	return glob('*' . AUDIO_FILE_TYPE);
+}
+
+function getReadableTitle($input) {
+	return str_replace(
+		[
+			AUDIO_FILE_TYPE,
+			'_',
+		],
+		[
+			'',
+			' ',
+		],
+		$input);
 }
 
 //

@@ -23,7 +23,7 @@ $channel = [
 
 
 function getFolderTitle() {
-	return basename(__DIR__);
+	return getReadableTitle(basename(__DIR__));
 }
 
 function getPubDate($file = null) {

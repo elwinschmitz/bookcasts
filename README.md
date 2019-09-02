@@ -12,12 +12,17 @@ Do you want to listen to it in your favorite podcast-app?
 
 ## Setup:
 - Copy the file `php/bookcast.xml.php` into your folder of audio-files.
-- Edit the `$channel = [ ... ];`-object to include all titles, descriptions and URLs.
+- Add an optional `metadata` or `metadata.ini` file with , for example, this contents: (all optional)
+  ```ini
+  language = en
+  copyright = 2019, The Publisher
+  description = A description of the audio-book.
+  ```
+
 - Upload the folder to your webhost.
 - Add the URL (`your-webhost.example.com/this-bookcast/bookcast.xml.php`) to your podcast-app.
 - Start downloading & listening!
 
-(And yes, you've basically just created a podcast-feed by hand; But I'm working on it...)
 
 ## About
 This thing is just an idea and very 'work-in-progress'.

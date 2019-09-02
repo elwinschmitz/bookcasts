@@ -4,23 +4,52 @@
 //
 
 // 
-// Configure / Setup data: 
+// Configure Options:
 //
+define('META_DATA_FILE_NAME', 'metadata{.ini,}');
 define('COVER_ART_FILE_NAME', 'coverart.jpg');
 define('AUDIO_FILE_TYPE', '.mp3');
 define('AUDIO_FILE_MIMETYPE', 'audio/mpeg');
+
+// 
+// Setup data: 
+//
+$metaData = getMetaData();
 
 $channel = [
 	"title" => getFolderTitle(),
 	"pubDate" => getPubDate(),
 	"link" => getBaseUrl(),
-	"language" => "en",
-	"copyright" => "",
+	"language" => $metaData["language"],
+	"copyright" => $metaData["copyright"],
 	"image" => getCoverArt(),
-	"description" => "Channel description",
+	"description" => $metaData["description"],
 	"items" => getItems(),
 ];
 
+// 
+// Functions:
+//
+function getMetaData() {
+	$defaults = [
+		"language" => "en",
+		"copyright" => "",
+		"description" => "",
+	];
+	$metaFiles = glob(META_DATA_FILE_NAME, GLOB_BRACE);
+
+	if (!$metaFiles || count($metaFiles) < 1) {
+		return $defaults;
+	}
+
+	$customData = parse_ini_file($metaFiles[0]);
+
+	if (!$customData) {
+		return $defaults;
+	}
+
+	return array_merge($defaults, $customData);
+}
 
 function getFolderTitle() {
 	return getReadableTitle(basename(__DIR__));

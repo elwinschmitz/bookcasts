@@ -12,6 +12,7 @@ Do you want to listen to it in your favorite podcast-app?
 
 ## Setup:
 - Copy the file `php/bookcast.xml.php` into your folder of audio-files.
+- Add an optional `coverart.jpg/jpeg/png` file
 - Add an optional `metadata` or `metadata.ini` file with , for example, this contents: (all optional)
   ```ini
   language = en

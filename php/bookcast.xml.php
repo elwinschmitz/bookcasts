@@ -7,7 +7,7 @@
 // Configure Options:
 //
 define('META_DATA_FILE_NAME', 'metadata{.ini,}');
-define('COVER_ART_FILE_NAME', 'coverart.jpg');
+define('COVER_ART_FILE_NAME', 'coverart.{jpg,jpeg,png}');
 define('AUDIO_FILE_TYPE', '.mp3');
 define('AUDIO_FILE_MIMETYPE', 'audio/mpeg');
 
@@ -70,7 +70,7 @@ function getBaseUrl() {
 }
 
 function getCoverArt() {
-	$hasCoverart = is_file(COVER_ART_FILE_NAME);
+	$hasCoverart = glob(COVER_ART_FILE_NAME)[0];
 	
 	if (!$hasCoverart) {
 		return false;
@@ -140,7 +140,11 @@ echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
 		<copyright><![CDATA[<?=$channel['copyright']?>]]></copyright>
 <?php endif; ?>
 <?php if (!empty($channel['image'])): ?>
-		<image><url><?=$channel['image']['url']?></url></image>
+		<image>
+			<title><?=$channel['title']?></title>
+			<link><?=$channel['link']?></link>
+			<url><?=$channel['image']['url']?></url>
+		</image>
 <?php endif; ?>
 <?php if (!empty($channel['description'])): ?>
 		<description><![CDATA[<?=$channel['description']?>]]></description>

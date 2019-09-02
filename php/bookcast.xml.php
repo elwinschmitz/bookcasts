@@ -62,11 +62,11 @@ function getPubDate($file = null) {
 }
 
 function getBaseUrl() {
-	return 
-	($_SERVER['HTTPS'] === 'on') ? 'https' : 'http' .
-	'://' .
-	$_SERVER['SERVER_NAME'] .
-	dirname($_SERVER['REQUEST_URI']) . '/';
+	$scheme = ($_SERVER['HTTPS'] === 'on') ? 'https' : 'http';
+
+	return $scheme . '://' .
+		$_SERVER['SERVER_NAME'] .
+		dirname($_SERVER['REQUEST_URI']) . '/';
 }
 
 function getCoverArt() {

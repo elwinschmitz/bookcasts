@@ -17,6 +17,7 @@ Do you want to listen to it in your favorite podcast-app?
   language = en
   copyright = 2019, The Publisher
   description = A description of the audio-book.
+  link = https://example.com/book/
   ```
 
 - Upload the folder to your webhost.

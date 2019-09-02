@@ -90,7 +90,7 @@ function getItems() {
 			"pubDate" => getPubDate($file),
 			"link" => "",
 			"description" => "",
-			"length" => "1",
+			"length" => "0",
 			"type" => AUDIO_FILE_MIMETYPE,
 			"url" => getBaseUrl() . $file,
 		];

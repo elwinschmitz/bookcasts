@@ -20,6 +20,7 @@ $channel = [
 	"title" => getFolderTitle(),
 	"pubDate" => getPubDate(),
 	"link" => (!empty($metaData["link"])) ? $metaData["link"] : getBaseUrl(),
+	"self" => getSelfUrl(),
 	"language" => $metaData["language"],
 	"copyright" => $metaData["copyright"],
 	"image" => getCoverArt(),
@@ -70,6 +71,10 @@ function getHostUrl() {
 function getBaseUrl() {
 	return getHostUrl() .
 		dirname($_SERVER['REQUEST_URI']) . '/';
+}
+
+function getSelfUrl() {
+	return getHostUrl() . $_SERVER['PHP_SELF'];
 }
 
 function getCoverArt() {
@@ -133,6 +138,7 @@ echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 >
 	<channel>
+		<atom:link href="<?=$channel['self']?>" rel="self" type="application/rss+xml" />
 		<title><?=$channel['title']?></title>
 		<pubDate><?=$channel['pubDate']?></pubDate>
 		<link><?=$channel['link']?></link>

@@ -61,11 +61,14 @@ function getPubDate($file = null) {
 	return date(DATE_RSS, filemtime($fromFile));
 }
 
-function getBaseUrl() {
+function getHostUrl() {
 	$scheme = ($_SERVER['HTTPS'] === 'on') ? 'https' : 'http';
 
-	return $scheme . '://' .
-		$_SERVER['SERVER_NAME'] .
+	return $scheme . '://' . $_SERVER['SERVER_NAME'];
+}
+
+function getBaseUrl() {
+	return getHostUrl() .
 		dirname($_SERVER['REQUEST_URI']) . '/';
 }
 

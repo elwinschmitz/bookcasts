@@ -70,14 +70,14 @@ function getBaseUrl() {
 }
 
 function getCoverArt() {
-	$hasCoverart = glob(COVER_ART_FILE_NAME)[0];
+	$coverartFile = glob(COVER_ART_FILE_NAME, GLOB_BRACE)[0];
 	
-	if (!$hasCoverart) {
+	if (!is_file($coverartFile)) {
 		return false;
 	}
 
 	return [
-		"url" => getBaseUrl() . COVER_ART_FILE_NAME
+		"url" => getBaseUrl() . $coverartFile
 	];
 }
 

@@ -1,0 +1,10 @@
+# Editor/development related
+.vscode
+
+# Audio-book related
+*.mp3
+metadata
+metadata.ini
+coverart.jpg
+coverart.jpeg
+coverart.png

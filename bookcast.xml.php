@@ -16,15 +16,15 @@ define('AUDIO_FILE_TYPES', '*.mp3');
 $metaData = getMetaData();
 
 $channel = [
-	"title" => getFolderTitle(),
-	"pubDate" => getPubDate(),
-	"link" => (!empty($metaData["link"])) ? $metaData["link"] : getBaseUrl(),
-	"self" => getSelfUrl(),
-	"language" => $metaData["language"],
-	"copyright" => $metaData["copyright"],
-	"image" => getCoverArt(),
-	"description" => $metaData["description"],
-	"items" => getItems(),
+	'title' => getFolderTitle(),
+	'pubDate' => getPubDate(),
+	'link' => (!empty($metaData['link'])) ? $metaData['link'] : getBaseUrl(),
+	'self' => getSelfUrl(),
+	'language' => $metaData['language'],
+	'copyright' => $metaData['copyright'],
+	'image' => getCoverArt(),
+	'description' => $metaData['description'],
+	'items' => getItems(),
 ];
 
 //
@@ -32,9 +32,10 @@ $channel = [
 //
 function getMetaData() {
 	$defaults = [
-		"language" => "en",
-		"copyright" => "",
-		"description" => "",
+		'language' => 'en',
+		'copyright' => '',
+		'description' => '',
+		'link' => '',
 	];
 	$metaFiles = glob(META_DATA_FILE_NAME, GLOB_BRACE);
 
@@ -84,7 +85,7 @@ function getCoverArt() {
 	}
 
 	return [
-		"url" => getBaseUrl() . $coverartFile
+		'url' => getBaseUrl() . $coverartFile
 	];
 }
 
@@ -93,13 +94,13 @@ function getItems() {
 
 	foreach ($files as $file) {
 		$items[] = [
-			"title" => getReadableTitle(pathinfo($file, PATHINFO_FILENAME)),
-			"pubDate" => getPubDate($file),
-			"link" => "",
-			"description" => "",
-			"length" => "0",
-			"type" => getAudioFileType($file),
-			"url" => getBaseUrl() . $file,
+			'title' => getReadableTitle(pathinfo($file, PATHINFO_FILENAME)),
+			'pubDate' => getPubDate($file),
+			'link' => '',
+			'description' => '',
+			'length' => '0',
+			'type' => getAudioFileType($file),
+			'url' => getBaseUrl() . $file,
 		];
 	}
 

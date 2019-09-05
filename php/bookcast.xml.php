@@ -93,7 +93,7 @@ function getItems() {
 
 	foreach ($files as $file) {
 		$items[] = [
-			"title" => getReadableTitle($file),
+			"title" => getReadableTitle(pathinfo($file, PATHINFO_FILENAME)),
 			"pubDate" => getPubDate($file),
 			"link" => "",
 			"description" => "",
@@ -122,14 +122,13 @@ function getAudioFileType($file) {
 function getReadableTitle($input) {
 	return str_replace(
 		[
-			AUDIO_FILE_TYPE,
 			'_',
 		],
 		[
-			'',
 			' ',
 		],
-		$input);
+		$input
+	);
 }
 
 //

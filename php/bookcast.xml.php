@@ -8,7 +8,7 @@
 //
 define('META_DATA_FILE_NAME', 'metadata{.ini,}');
 define('COVER_ART_FILE_NAME', 'coverart.{jpg,jpeg,png}');
-define('AUDIO_FILE_TYPE', '.mp3');
+define('AUDIO_FILE_TYPES', '*.mp3');
 
 // 
 // Setup data: 
@@ -107,7 +107,7 @@ function getItems() {
 }
 
 function getAudioFiles() {
-	return glob('*' . AUDIO_FILE_TYPE);
+	return glob(AUDIO_FILE_TYPES, GLOB_BRACE);
 }
 
 function getAudioFileType($file) {

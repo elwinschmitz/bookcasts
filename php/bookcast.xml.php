@@ -9,7 +9,6 @@
 define('META_DATA_FILE_NAME', 'metadata{.ini,}');
 define('COVER_ART_FILE_NAME', 'coverart.{jpg,jpeg,png}');
 define('AUDIO_FILE_TYPE', '.mp3');
-define('AUDIO_FILE_MIMETYPE', 'audio/mpeg');
 
 // 
 // Setup data: 
@@ -99,7 +98,7 @@ function getItems() {
 			"link" => "",
 			"description" => "",
 			"length" => "0",
-			"type" => AUDIO_FILE_MIMETYPE,
+			"type" => getAudioFileType($file),
 			"url" => getBaseUrl() . $file,
 		];
 	}
@@ -109,6 +108,15 @@ function getItems() {
 
 function getAudioFiles() {
 	return glob('*' . AUDIO_FILE_TYPE);
+}
+
+function getAudioFileType($file) {
+	$extension = pathinfo($file, PATHINFO_EXTENSION);
+	$types = [
+		'mp3' => 'audio/mpeg',
+	];
+
+	return $types[$extension];
 }
 
 function getReadableTitle($input) {

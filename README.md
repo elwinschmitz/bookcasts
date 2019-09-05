@@ -28,6 +28,19 @@ Do you want to listen to it in your favorite podcast-app?
 - Start downloading & listening!
 
 
+## Configuration / Options
+You can tweak the following options: (in the top of `bookcast.xml.php`):
+
+- `META_DATA_FILE_NAME`  
+	If you want to use a different metadata file.
+- `COVER_ART_FILE_NAME`  
+	If you want to include different image-files/formats.
+- `AUDIO_FILE_TYPES`  
+	If you want to use different audio-files.
+
+The syntax used is from `glob()`, see an explanation in the  [PHP manual](https://www.php.net/manual/en/function.glob.php).
+
+
 ## Supported / Testing
 - The output is a valid feed, according to [W3C Feed Validation Service](https://validator.w3.org/feed/).
 - The feed works (good enough) in [Overcast](https://overcast.fm/).

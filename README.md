@@ -1,7 +1,7 @@
 📚🔈 BookCasts
 ==============
 
-Turn audiobooks into podcasts.  
+Turn audiobooks into podcasts.
 
 Do you have a folder of audio-files?
 Do you want to listen to it in your favorite podcast-app?

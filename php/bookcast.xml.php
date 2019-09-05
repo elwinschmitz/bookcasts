@@ -3,15 +3,15 @@
 // See: https://github.com/elwinschmitz/bookcasts
 //
 
-// 
+//
 // Configure Options:
 //
 define('META_DATA_FILE_NAME', 'metadata{.ini,}');
 define('COVER_ART_FILE_NAME', 'coverart.{jpg,jpeg,png}');
 define('AUDIO_FILE_TYPES', '*.mp3');
 
-// 
-// Setup data: 
+//
+// Setup data:
 //
 $metaData = getMetaData();
 
@@ -27,7 +27,7 @@ $channel = [
 	"items" => getItems(),
 ];
 
-// 
+//
 // Functions:
 //
 function getMetaData() {
@@ -78,7 +78,7 @@ function getSelfUrl() {
 
 function getCoverArt() {
 	$coverartFile = glob(COVER_ART_FILE_NAME, GLOB_BRACE)[0];
-	
+
 	if (!is_file($coverartFile)) {
 		return false;
 	}
@@ -177,8 +177,8 @@ echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
 <?php if (!empty($item['description'])): ?>
 					<description><![CDATA[<?=$item['description']?>]]></description>
 <?php endif; ?>
-				<enclosure length="<?=$item['length']?>" 
-				           type="<?=$item['type']?>" 
+				<enclosure length="<?=$item['length']?>"
+				           type="<?=$item['type']?>"
 				           url="<?=$item['url']?>"
 				/>
 			</item>

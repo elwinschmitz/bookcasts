@@ -26,6 +26,11 @@ Do you want to listen to it in your favorite podcast-app?
 - Start downloading & listening!
 
 
+## Supported / Testing
+- The output is a valid feed, according to [W3C Feed Validation Service](https://validator.w3.org/feed/).
+- The feed works (good enough) in [Overcast](https://overcast.fm/).
+- It might also work in your favorite podcast-app, who knows.
+
 ## About
 This thing is just an idea and very 'work-in-progress'.
 It was created to scratch my own itch; Maybe it also works for you.

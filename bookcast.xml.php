@@ -70,7 +70,7 @@ function getHostUrl() {
 
 function getBaseUrl() {
 	return getHostUrl() .
-		dirname($_SERVER['REQUEST_URI']) . '/';
+		dirname($_SERVER['SCRIPT_NAME']) . '/';
 }
 
 function getSelfUrl() {

@@ -163,9 +163,7 @@ echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
 			<url><?=$channel['image']['url']?></url>
 		</image>
 <?php endif; ?>
-<?php if (!empty($channel['description'])): ?>
 		<description><![CDATA[<?=$channel['description']?>]]></description>
-<?php endif; ?>
 
 <?php foreach ($channel['items'] as $index => $item): ?>
 			<item>

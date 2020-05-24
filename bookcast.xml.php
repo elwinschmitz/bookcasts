@@ -101,6 +101,7 @@ function getItems() {
 			'length' => '0',
 			'type' => getAudioFileType($file),
 			'url' => getBaseUrl() . $file,
+			'guid' => getBaseUrl() . $file . '?' . filemtime($file),
 		];
 	}
 
@@ -169,7 +170,7 @@ echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
 			<item>
 				<title><?=$item['title']?></title>
 				<pubDate><?=$item['pubDate']?></pubDate>
-				<guid isPermaLink="false"><![CDATA[<?=$channel['link'] . "?" . $index?>]]></guid>
+				<guid isPermaLink="false"><![CDATA[<?=$item['guid']?>]]></guid>
 <?php if (!empty($item['link'])): ?>
 					<link><![CDATA[<?=$item['link']?>]]></link>
 <?php endif; ?>

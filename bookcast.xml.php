@@ -16,7 +16,7 @@ define('AUDIO_FILE_TYPES', '*.mp3');
 $metaData = getMetaData();
 
 $channel = [
-	'title' => getFolderTitle(),
+	'title' => (!empty($metaData['title'])) ? $metaData['title'] : getFolderTitle(),
 	'pubDate' => getPubDate(),
 	'link' => (!empty($metaData['link'])) ? $metaData['link'] : getBaseUrl(),
 	'self' => getSelfUrl(),

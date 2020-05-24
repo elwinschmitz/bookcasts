@@ -18,8 +18,9 @@ Do you want to listen to it in your favorite podcast-app?
 - Add an optional `metadata` or `metadata.ini` file with , for example, this contents: (all optional)
   ```ini
   language = en
-  copyright = 2019, The Publisher
+  title = The Audio-book
   description = A description of the audio-book.
+  copyright = 2020, The Publisher
   link = https://example.com/book/
   ```
 

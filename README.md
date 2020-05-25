@@ -55,3 +55,6 @@ It was created to scratch my own itch; Maybe it also works for you.
 Suggestions and ideas are always welcome.  
 [Create an issue](https://github.com/elwinschmitz/bookcasts/issues/new)
  or take a look at all the '_[things I already thought of but didn't get to yet](https://github.com/elwinschmitz/bookcasts/projects)_'.
+
+Or take a look at another piece of php software: [dir2cast](https://github.com/ben-xo/dir2cast)  
+It probably has the feature you're looking for.

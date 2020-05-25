@@ -8,7 +8,7 @@ Do you want to listen to it in your favorite podcast-app?
 
 
 ## Requirements
-- Webhosting space (enough to fit your audio-files)
+- Web-hosting space (enough to fit your audio-files)
 - PHP running on it
 
 
@@ -24,7 +24,7 @@ Do you want to listen to it in your favorite podcast-app?
   link = https://example.com/book/
   ```
 
-- Upload the folder to your webhost.
+- Upload the folder to your web-host.
 - Add the URL (`your-webhost.example.com/this-bookcast/bookcast.xml.php`) to your podcast-app.
 - Start downloading & listening!
 
